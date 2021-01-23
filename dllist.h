@@ -19,31 +19,36 @@ public:
     {
     private:
         box *first, *current;
-        Iterator(box*, box*);
     public:
+        Iterator(box*, box*);
         T& operator*();
         Iterator& operator++();
-        Iterator& operator--();
-        bool operator!=(const Iterator&) const;
+        Iterator& operator--(); //done
+        bool operator!=(const Iterator&) const; //done
         
 
     };
     Iterator begin();
     Iterator last();
     Iterator end();
-    DLList();
-    DLList(const DLList<T>&);
-    ~DLList();
-    DLList<T>& operator= (const DLList<T>&);
-    DLList<T> operator+ (const T&) const;
-    DLList<T>& operator+= (const T&);
+    //
+    DLList(); //done
+    DLList(const DLList<T>&); //done
+    ~DLList(); //done
+    //
+    DLList<T>& operator= (const DLList<T>&); // done
+    DLList<T> operator+ (const T&) const; //done
+    DLList<T>& operator+= (const T&); //done
     //friend operator << (new template)!!!
+    bool empty() const; //done
 private:
-    void copy(const DLList<T>&);
-    void clear();
+    void copy(const DLList<T>&); //done
+    void clear(); //done
 };
 template <class T>
-std::ostream& operator<< (dst::ostream&, const DLList<T>&);
+std::ostream& operator<<(std::ostream&, DLList<T>&);
 
-//include dllist.h
+
+#include "dllist.cpp"
+
 #endif 
